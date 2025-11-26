@@ -10,4 +10,11 @@ describe("If Statement", function () {
       console.info("Try Again");
     }
   });
+
+  it("Should support ternary operator", function () {
+    const examValue = 90;
+    const say = examValue >= 75 ? "Congratulation" : "Try Agaian";
+
+    console.info(say);
+  });
 });
