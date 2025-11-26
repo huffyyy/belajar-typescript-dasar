@@ -1,5 +1,5 @@
 import type { Employee, Manager } from "../src/employee";
-import type { Person } from "../src/Person";
+import type { Person } from "../src/person";
 import type { Seller } from "../src/seller";
 
 describe("Interface", function () {
