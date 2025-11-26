@@ -62,4 +62,22 @@ describe("Function", () => {
     console.info(callMe("fikri"));
     console.info(callMe(5));
   });
+
+  it("Should support function as parameter", function () {
+    function sayHello(name: string, filter: (name: string) => string): string {
+      return `Hello ${filter(name)}`;
+    }
+    function toUpper(name: string): string {
+      return name.toUpperCase();
+    }
+    expect(sayHello("husnul", toUpper)).toBe("Hello HUSNUL");
+
+    expect(
+      sayHello("Husnul", function (name: string): string {
+        return name.toUpperCase();
+      })
+    ).toBe("Hello HUSNUL");
+
+    expect(sayHello("Husnul", (name: string): string => name.toUpperCase())).toBe("Hello HUSNUL");
+  });
 });
