@@ -1,4 +1,5 @@
 import type { Employee, Manager } from "../src/employee";
+import type { Person } from "../src/Person";
 import type { Seller } from "../src/seller";
 
 describe("Interface", function () {
@@ -68,11 +69,6 @@ describe("Interface", function () {
   });
 
   it("Should support function interface", function () {
-    interface Person {
-      name: string;
-      sayHello(name: string): string;
-    }
-
     const person: Person = {
       name: "Husnul",
       sayHello: function (name: string): string {
@@ -97,5 +93,15 @@ describe("Interface", function () {
       name: "Husnul"
     };
     console.info(domain);
+  });
+
+  it("Should support type assertion", function () {
+    const person: any = {
+      name: "Husnul",
+      age: 30
+    };
+    const personAsPerson = person as Person;
+    // personAsPerson.sayHello("Fikri"); // Error
+    console.info(personAsPerson);
   });
 });
