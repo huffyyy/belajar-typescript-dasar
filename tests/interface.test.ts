@@ -79,7 +79,23 @@ describe("Interface", function () {
         return `Hello ${name}, my name is ${this.name}`;
       }
     };
-
     console.info(person.sayHello("Fikri"));
+  });
+
+  it("Should support intersection type", function () {
+    interface Hasname {
+      name: string;
+    }
+    interface HasId {
+      id: number;
+    }
+
+    type Domain = HasId & Hasname;
+
+    const domain: Domain = {
+      id: 1,
+      name: "Husnul"
+    };
+    console.info(domain);
   });
 });
