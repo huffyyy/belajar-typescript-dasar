@@ -22,4 +22,12 @@ describe("Loop", function () {
       counter++;
     }
   });
+
+  it("Should support do while loops", function () {
+    let counter = 0;
+    do {
+      console.info(counter);
+      counter++;
+    } while (counter < 10);
+  });
 });
