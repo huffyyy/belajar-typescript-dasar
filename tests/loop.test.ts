@@ -30,4 +30,18 @@ describe("Loop", function () {
       counter++;
     } while (counter < 10);
   });
+
+  it("Should support break and continue", function () {
+    let counter = 0;
+    do {
+      counter++;
+      if (counter === 10) {
+        break;
+      }
+      if (counter % 2 == 0) {
+        break;
+      }
+      console.info(counter);
+    } while (true);
+  });
 });
