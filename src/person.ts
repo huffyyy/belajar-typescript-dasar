@@ -1,4 +1,5 @@
 export interface Person {
-  name: string;
-  sayHello(name: string): string;
+    name: string;
+
+    sayHello(name: string): string;
 }
